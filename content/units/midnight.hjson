@@ -1,0 +1,148 @@
+name: Midnight
+description: Pizdec u menya shiza.
+armor: 20
+health: 52000
+speed: 0.4
+rotateSpeed: 0.7
+accel: 1.5
+drag: 0.1
+hitSize: 60
+flying: true
+lowAltitude: true
+commandLimit: 24
+engineOffset: 42
+engineSize: 15
+rotateShooting: false
+payloadCapacity: 380
+buildSpeed: 0.5
+range: 280
+research: eclipse
+weapons: [
+  {
+  name: rocket-launcher
+  x: 16
+  y: 42
+  mirror: true
+  reload: 3
+  shoots: 2
+  rotate: true
+  inaccuracy: 5
+  velocityRnd: 0.3
+  shootSound: missile
+  bullet: {
+    type: MissileBulletType
+    width: 8
+    height: 8
+    shrinkY: 0
+    drag: -0.003
+    speed: 3
+    homingRange: 40
+    keepVelocity: false
+    damage: 24
+    splashDamageRadius: 25
+    splashDamage: 56
+    lifetime: 120
+    trailColor: 991111
+    backColor: 551111
+    frontColor: 991111
+    hitEffect: blastExplosion
+    despawnEffect: blastExplosion
+    weaveScale: 6
+    weaveMag: 1
+    }
+  }
+  {
+  name: rocket-launcher
+  x: 20
+  y: 34
+  mirror: true
+  reload: 3
+  shoots: 2
+  rotate: true
+  inaccuracy: 5
+  velocityRnd: 0.3
+  shootSound: missile
+  bullet: {
+    type: MissileBulletType
+    width: 8
+    height: 8
+    shrinkY: 0
+    drag: -0.003
+    speed: 3
+    homingRange: 40
+    keepVelocity: false
+    damage: 24
+    splashDamageRadius: 25
+    splashDamage: 56
+    lifetime: 120
+    trailColor: 991111
+    backColor: 551111
+    frontColor: 991111
+    hitEffect: blastExplosion
+    despawnEffect: blastExplosion
+    weaveScale: 6
+    weaveMag: 1
+    }
+  }
+  {
+  name: railgun
+  reload: 90
+  cooldownTime: 90
+  mirror: false
+  x: 0
+  y: -20
+  rotateSpeed: 1.8
+  rotate: true
+  recoil: 10
+  shadow: 50
+  shootSound: railgun
+  bullet: {
+    type: RailBulletType
+    shootEffect: railShoot
+    length: 600
+    updateEffectSeg: 60
+    pierceEffect: railHit
+    updateEffect: railTrail
+    hitEffect: massiveExplosion
+    smokeEffect: shootBig2
+    damage: 3500
+    }
+  }
+  {
+  name: laser
+  x: 14
+  y: 16
+  shootY: 4
+  reload: 15
+  recoil: 1
+  rotate: true
+  shootSound: laser
+  bullet: {
+    type: LaserBulletType
+    damage: 520
+    sideAngle: 45
+    sideWidth: 1
+    sideLength: 50
+    width: 25
+    length: 200
+    colors: [
+      ec7458aa, ff9c5a, ffffff
+    ]
+  }
+}]
+abilities: [
+  {
+    type: ForceFieldAbility
+    radius: 80
+    regen: 60
+    max: 12000
+    cooldown: 120
+  }
+  {
+    type: UnitSpawnAbility
+    unit: zenith
+    spawnX: 0
+    spawnY: -36
+    spawnTime: 600
+  }
+]
