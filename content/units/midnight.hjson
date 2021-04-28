@@ -1,10 +1,11 @@
+type: flying
 name: Midnight
-description: Pizdec u menya shiza.
+description: Equipped with four rapid-fire rocket launchers, two lasers and an improved meltown. Also has a Minion factory to repair itself, and a super-powerful force field.
 armor: 20
 health: 52000
 speed: 0.4
 rotateSpeed: 0.7
-accel: 1.5
+accel: 2
 drag: 0.1
 hitSize: 60
 flying: true
@@ -13,7 +14,7 @@ commandLimit: 24
 engineOffset: 42
 engineSize: 15
 rotateShooting: false
-payloadCapacity: 380
+drawShields: false
 buildSpeed: 0.5
 range: 280
 research: eclipse
@@ -38,9 +39,9 @@ weapons: [
     speed: 3
     homingRange: 40
     keepVelocity: false
-    damage: 24
+    damage: 40
     splashDamageRadius: 25
-    splashDamage: 56
+    splashDamage: 120
     lifetime: 120
     trailColor: 991111
     backColor: 551111
@@ -71,9 +72,9 @@ weapons: [
     speed: 3
     homingRange: 40
     keepVelocity: false
-    damage: 24
+    damage: 40
     splashDamageRadius: 25
-    splashDamage: 56
+    splashDamage: 120
     lifetime: 120
     trailColor: 991111
     backColor: 551111
@@ -86,26 +87,25 @@ weapons: [
   }
   {
   name: railgun
-  reload: 90
-  cooldownTime: 90
+  reload: 60
   mirror: false
   x: 0
   y: -20
-  rotateSpeed: 1.8
+  shootY: 3
+  rotateSpeed: 0.5
   rotate: true
   recoil: 10
-  shadow: 50
-  shootSound: railgun
+  continuous: true
+  shootSound: beam
   bullet: {
-    type: RailBulletType
-    shootEffect: railShoot
-    length: 600
-    updateEffectSeg: 60
-    pierceEffect: railHit
-    updateEffect: railTrail
-    hitEffect: massiveExplosion
-    smokeEffect: shootBig2
-    damage: 3500
+    type: ContinuousLaserBulletType
+    length: 300
+    damage: 300
+    lifetime: 300
+    drawSize: 420
+    width: 10
+    colors: [ec5236aa, ff7a38, ffdddd]
+    hitEffect: hitMeltdown
     }
   }
   {
@@ -119,15 +119,13 @@ weapons: [
   shootSound: laser
   bullet: {
     type: LaserBulletType
-    damage: 520
+    damage: 800
     sideAngle: 45
     sideWidth: 1
     sideLength: 50
     width: 25
     length: 200
-    colors: [
-      ec7458aa, ff9c5a, ffffff
-    ]
+    colors: [ec7458aa, ff9c5a, ffffff]
   }
 }]
 abilities: [
@@ -140,9 +138,9 @@ abilities: [
   }
   {
     type: UnitSpawnAbility
-    unit: zenith
+    unit: minion
     spawnX: 0
     spawnY: -36
-    spawnTime: 600
+    spawnTime: 300
   }
 ]
