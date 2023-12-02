@@ -18,6 +18,7 @@ drawShields: false
 buildSpeed: 0.5
 range: 280
 research: eclipse
+faceTarget: false
 weapons: [
   {
   name: rocket-launcher
